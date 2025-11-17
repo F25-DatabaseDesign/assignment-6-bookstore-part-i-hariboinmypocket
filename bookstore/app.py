@@ -10,16 +10,7 @@ categories = [{"id": 1, "name": "Textbooks"},
               {"id": 3, "name": "Lab Supplies"},
               {"id", 4, "name": "Other Books"}]
 
-# Create a list called books. The elements in the list should be lists that contain the following information in this order:
-#   bookId     (you can assign the bookId - preferably a number from 1-16)
-#   categoryId (this should be one of the categories in the category dictionary)
-#   title
-#   author
-#   isbn
-#   price      (the value should be a float)
-#   image      (this is the filename of the book image.  If all the images have the same extension, you can omit the extension)
-#   readNow    (This should be either 1 or 0.  For each category, some of the books (but not all) should have this set to 1.
-#   An example of a single category list is: [1, 1, "Madonna", "Andrew Morton", "13-9780312287863", 39.99, "madonna.png", 1]
+# create the list of books
 books = [[1, 1, "General Chemistry - Atoms to Reactions", "Kevin Revell", "13-9781319589554", "54.99", "static/images/books/textbooks/genchem.png", 1],
          [2, 1, "Organic Chemistry", "Sardine Designs Science", "13-9781794195028", "60.37", "static/images/books/textbooks/orgo.png", 0],
          [3, 1, "Biochemistry 3rd Edition", "Mathews, Van Holde & Ahern", "13-9780805330663", "45.99", "static/images/books/textbooks/biochem.png", 1],
