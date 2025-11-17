@@ -8,7 +8,7 @@ app = Flask(__name__)
 categories = [{"id": 1, "name": "Textbooks"},
               {"id": 2, "name": "Study Guides"},
               {"id": 3, "name": "Lab Supplies"},
-              {"id", 4, "name": "Other Books"}]
+              {"id": 4, "name": "Other Books"}]
 
 # create the list of books
 books = [[1, 1, "General Chemistry - Atoms to Reactions", "Kevin Revell", "13-9781319589554", "54.99", "static/images/books/textbooks/genchem.png", 1],
@@ -65,3 +65,6 @@ def handle_error(e):
 
 if __name__ == "__main__":
     app.run(debug = True)
+
+if __name__ == '__main__':
+    app.run(host='0.0.0.0', port=8080)
