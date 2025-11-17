@@ -17,7 +17,7 @@ categories = [{"id": 1, "name": "Textbooks"},
 #   author
 #   isbn
 #   price      (the value should be a float)
-#   image      (this is the filename of the book image.  If all the images, have the same extension, you can omit the extension)
+#   image      (this is the filename of the book image.  If all the images have the same extension, you can omit the extension)
 #   readNow    (This should be either 1 or 0.  For each category, some of the books (but not all) should have this set to 1.
 #   An example of a single category list is: [1, 1, "Madonna", "Andrew Morton", "13-9780312287863", 39.99, "madonna.png", 1]
 books = [[1, 1, "General Chemistry - Atoms to Reactions", "Kevin Revell", "13-9781319589554", "54.99", "static/images/books/textbooks/genchem.png", 1],
@@ -40,17 +40,24 @@ books = [[1, 1, "General Chemistry - Atoms to Reactions", "Kevin Revell", "13-97
 # set up routes
 @app.route('/')
 def home():
-    #Link to the index page.  Pass the categories as a parameter
-    return render_template()
+    return render_template("index.html", categories = categories)
 
 @app.route('/category')
 def category():
     # Store the categoryId passed as a URL parameter into a variable
-
+    categoryId = int(request.args.get('categoryId'))
+  
     # Create a new list called selected_books containing a list of books that have the selected category
-
-    # Link to the category page.  Pass the selectedCategory, categories and books as parameters
-    return render_template()
+    selected_books = []
+    for b in books:
+      if b[1] == categoryId:
+        selected_books.append(b)
+        
+    # Link to the category page.  Pass the selectedCategory, categories, and books as parameters
+    return render_template("category.html",
+                           categories = categories,
+                           books = selected_books,
+                           selectedCategory = categoryId)
 
 @app.route('/search')
 def search():
