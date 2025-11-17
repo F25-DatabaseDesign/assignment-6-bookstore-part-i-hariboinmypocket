@@ -5,7 +5,10 @@ from flask import Flask, render_template, request, redirect, url_for, make_respo
 app = Flask(__name__)
 
 # create the categories list
-categories = {1: "Textbooks", 2: "Study Guides", 3: "Lab Materials", 4: "Other Books"}
+categories = [{"id": 1, "name": "Textbooks"},
+              {"id": 2, "name": "Study Guides"},
+              {"id": 3, "name": "Lab Supplies"},
+              {"id", 4, "name": "Other Books"}]
 
 # Create a list called books. The elements in the list should be lists that contain the following information in this order:
 #   bookId     (you can assign the bookId - preferably a number from 1-16)
